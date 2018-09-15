@@ -1,4 +1,4 @@
 {
     "jwtkey": "bgfbf",
-    "db" : "mongodb://newblog:123456789Q@ds046677.mlab.com:46677/newblog"
+    "db" : "mongodb://bb:123456789Q@ds046677.mlab.com:46677/bb"
 }
