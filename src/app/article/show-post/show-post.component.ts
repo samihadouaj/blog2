@@ -18,7 +18,7 @@ postId: string;
 comments: any;
   constructor(private articleService: ArticleService,
   private route: ActivatedRoute,
-private userService: UserService,
+public userService: UserService,
 private router: Router
 ) { }
 

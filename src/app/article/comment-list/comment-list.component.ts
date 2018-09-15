@@ -13,10 +13,10 @@ export class CommentListComponent implements OnInit {
 comments: any[];
 emptyArea ;
 @Input() postId: string;
-  constructor(private commentService: CommentService,
+  constructor(public commentService: CommentService,
      private tokenManager: TokenManager, 
-    private authService: AuthService,
-    private userService: UserService) { }
+    public authService: AuthService,
+    public userService: UserService) { }
 
   async ngOnInit() {
     this.commentService.comments = await this.commentService.getComments(this.postId);
