@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1 class="display-5">{{post.title}}</h1>
+    <p class="lead">{{post.subject}}</p>
+    <hr>
+    <div class="lead"><a><img [src]="owner.image" class="rounded-circle" style="width: 40px">{{post.owner.ownerName}}</a></div>
+    <div > {{post.date|date:'medium'}}</div>
+    <div class="pull-right" *ngIf="userService.isItYourPost(post._id) == true ">
+      <button class=" btn btn-success" style="margin: 4px" (click)= "toUpdatePost()" >update post</button>
+      <button class=" btn btn-warning" style="margin: 4px" (click)="detetePost()">delete post</button>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-8 offset-2">
+        <div class="card">
+          
+          <div class="card-body" *ngIf="post.type === 'Article'; else image">
+            {{post.content}}
+          </div>
+          <ng-template #image class="card-body">
+            <img [src]="post.content" style="border-radius: 5px">
+          </ng-template>
+        </div>
+      </div>
+  </div>
+  <br><br>
+  <hr>
+  <br><br>
+</div>
+
+<app-comment-list [postId]="postId" style="margin-top: 4px "></app-comment-list>
+  
+

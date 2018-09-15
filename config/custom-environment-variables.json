@@ -1,0 +1,4 @@
+{
+    "jwtkey": "blog_jwtkey",
+    "db": "db"
+}
